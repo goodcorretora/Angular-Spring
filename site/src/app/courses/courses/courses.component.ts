@@ -11,7 +11,7 @@ import { Course } from './model/course';
 })
 export class CoursesComponent implements OnInit {
 
-  courses: Observable<Course[]>;
+  courses$: Observable<Course[]>;
   //courses: Course[] = [];
   displayedColumns = ['name', 'category' ];
 
@@ -20,7 +20,7 @@ export class CoursesComponent implements OnInit {
   constructor(private coursesService: CoursesService) {
     //this.courses = [];
     //this.coursesService = new CoursesService();
-    this.courses = this.coursesService.list();
+    this.courses$ = this.coursesService.list();
 
     //this.coursesService.list().subscribe(courses => this.courses = courses)
   }
